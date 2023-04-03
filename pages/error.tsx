@@ -7,8 +7,11 @@ const ErrorPage = () => {
   const error = useRouteError();
   console.log(error);
   let errorBody: ErrorType = { title: '404', message: 'Page is not found!!' };
-  if (error.status === 500) errorBody.title = '500';
-  errorBody.message = 'Somethins went wrong!!';
+
+  if (error.status === 500) {
+    errorBody.title = '500';
+    errorBody.message = 'Somethins went wrong!!';
+  }
 
   return (
     <React.Fragment>

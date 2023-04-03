@@ -52,3 +52,20 @@
   width: 500px;
   white-space: nowrap;
 }
+
+.news-navigation {
+  text-align: center;
+  margin-top: 20px;
+}
+.news-navigation a {
+  background-color: rgb(159, 158, 158);
+  text-decoration: none;
+  padding: 10px;
+  margin: 0 10px;
+  color: #fff;
+}
+
+.news-navigation a:hover,
+a.active {
+  background-color: var(--orange);
+}

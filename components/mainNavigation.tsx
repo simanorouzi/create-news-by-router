@@ -6,13 +6,13 @@ const MainNavigation = () => {
   const activeClass = ({ isActive }) => (isActive ? classes.active : undefined);
   return (
     <nav className={classes.navigate}>
-      <NavLink to="/" className={activeClass}>
+      <NavLink to="/" className={activeClass} end>
         Home
       </NavLink>
-      <NavLink to="/news" className={activeClass}>
+      <NavLink to="/news" className={activeClass} end>
         News
       </NavLink>
-      <NavLink to="/AboutUs" className={activeClass}>
+      <NavLink to="/AboutUs" className={activeClass} end>
         About Us
       </NavLink>
     </nav>

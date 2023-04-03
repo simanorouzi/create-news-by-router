@@ -4,6 +4,8 @@ import ErrorPage from './pages/error';
 import Home from './pages/home';
 import Main from './pages/main';
 import News, { loader as newsLoader } from './pages/news';
+import NewsDetail from './pages/newsDetail';
+import NewsLayout from './pages/newsLayout';
 import './style.css';
 
 export default function App() {
@@ -19,8 +21,18 @@ export default function App() {
         },
         {
           path: 'news',
-          element: <News />,
-          loader: newsLoader,
+          element: <NewsLayout />,
+          children: [
+            {
+              index: true,
+              element: <News />,
+              loader: newsLoader,
+            },
+            {
+              path: ':newsId',
+              element: <NewsDetail />,
+            },
+          ],
         },
       ],
     },

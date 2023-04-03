@@ -5,6 +5,7 @@ import classes from '../components/news.module.css';
 
 const News = () => {
   const news = useLoaderData();
+
   const data = Object.entries(news).map(([key, value]) => {
     return {
       id: key,
@@ -29,9 +30,9 @@ export const loader = async () => {
   );
 
   if (!response.ok) {
-    throw json({ message: 'fetch news wen wrong!' }, { status: 500 });
+    throw json({ message: 'fetch news went wrong!' }, { status: 500 });
+  } else {
+    return response;
   }
-
-  return response;
 };
 export default News;
