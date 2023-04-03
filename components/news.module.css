@@ -1,0 +1,54 @@
+:root {
+  --orange: orange;
+}
+.news {
+  list-style: none;
+}
+
+.news a {
+  text-decoration: none;
+  color: var(--orange);
+}
+.news a:hover {
+  color: rgb(255, 224, 177);
+}
+.news li {
+  border: solid 1px rgb(135, 135, 135);
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.news h2 {
+  font-size: 14px;
+}
+
+.news p {
+  font-size: 12px;
+}
+
+.card {
+  margin: 20px auto;
+  width: 50%;
+}
+
+.add-news {
+  background-color: var(--orange);
+  border-radius: 5px;
+  color: white;
+  border: 0;
+  padding: 10px;
+  margin-left: 40px;
+}
+.add-news:hover {
+  background-color: #eee;
+  color: var(--orange);
+  cursor: pointer;
+}
+
+.news p.summery {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 500px;
+  white-space: nowrap;
+}

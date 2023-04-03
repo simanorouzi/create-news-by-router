@@ -1,0 +1,18 @@
+.navigate {
+  padding: 10px;
+  background-color: #eee;
+}
+.navigate a {
+  text-decoration: none;
+  color: crimson;
+}
+
+.navigate a::after {
+  content: '|';
+  margin: 0 10px;
+}
+
+.navigate a:hover,
+a.active {
+  background-color: orange;
+}
