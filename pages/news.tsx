@@ -18,7 +18,7 @@ const News = () => {
 
   return (
     <div className={classes.card}>
-      <button className={classes['add-news']}>Add News</button>
+      <button className={classes['add-news']} >Add News</button>
       <NewsList list={data} />
     </div>
   );

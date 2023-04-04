@@ -10,7 +10,7 @@ const NewsNavigation = () => {
       <NavLink to="/news" className={activeClass} end>
         All News
       </NavLink>
-      <NavLink to="/news/new" className={activeClass} end>
+      <NavLink to="/news/add" className={activeClass} end>
         Add News
       </NavLink>
     </div>
