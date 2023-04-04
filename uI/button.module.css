@@ -1,0 +1,12 @@
+.default-button {
+  background-color: var(--orange);
+  border-radius: 5px;
+  color: white;
+  border: 0;
+  padding: 10px;
+}
+.default-button:hover {
+  background-color: #eee;
+  color: var(--orange);
+  cursor: pointer;
+}

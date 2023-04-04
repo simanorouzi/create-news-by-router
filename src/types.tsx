@@ -1,3 +1,5 @@
+import React = require('react');
+
 export type ErrorType = {
   title: string;
   message: string;
@@ -10,4 +12,10 @@ export type newsType = {
   description: string;
   image: string;
   date: Date;
+};
+
+export type ButtonType = {
+  onClick: () => void;
+  children: React.ReactNode;
+  
 };
