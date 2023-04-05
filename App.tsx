@@ -6,7 +6,10 @@ import ErrorPage from './pages/error';
 import Home from './pages/home';
 import Main from './pages/main';
 import News, { loader as newsLoader } from './pages/news';
-import NewsDetail, { loader as newsDetailLoader } from './pages/newsDetail';
+import NewsDetail, {
+  loader as newsDetailLoader,
+  action as deleteNewsAction,
+} from './pages/newsDetail';
 import NewsLayout from './pages/newsLayout';
 import './style.css';
 
@@ -38,6 +41,7 @@ export default function App() {
                 {
                   index: true,
                   element: <NewsDetail />,
+                  action: deleteNewsAction,
                 },
                 {
                   path: 'edit',
