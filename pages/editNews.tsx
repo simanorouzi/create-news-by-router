@@ -1,7 +1,10 @@
 import * as React from 'react';
+import { useRouteLoaderData } from 'react-router-dom';
+import NewsForm from '../components/newsForm';
 
 const EditNews = () => {
-  return <h1>Edit</h1>;
+  const news = useRouteLoaderData('news-detail');
+  return <NewsForm news={news} />;
 };
 
 export default EditNews;

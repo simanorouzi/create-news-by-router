@@ -18,4 +18,5 @@ export type ButtonType = {
   onClick: () => void;
   children: React.ReactNode;
   className?: string;
+  type?: 'submit' | 'reset';
 };
