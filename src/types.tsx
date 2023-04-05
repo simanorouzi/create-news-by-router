@@ -17,5 +17,5 @@ export type newsType = {
 export type ButtonType = {
   onClick: () => void;
   children: React.ReactNode;
-  
+  className?: string;
 };

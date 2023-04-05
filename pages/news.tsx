@@ -2,6 +2,7 @@ import * as React from 'react';
 import NewsList from '../components/newsList';
 import { json, useLoaderData } from 'react-router-dom';
 import classes from '../components/news.module.css';
+import Button from '../uI/button';
 
 const News = () => {
   const news = useLoaderData();
@@ -18,7 +19,7 @@ const News = () => {
 
   return (
     <div className={classes.card}>
-      <button className={classes['add-news']} >Add News</button>
+      <Button className={classes['add-news']}>Add News</Button>
       <NewsList list={data} />
     </div>
   );

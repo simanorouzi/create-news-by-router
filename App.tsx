@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import AddNews from './pages/addNews';
+import EditNews from './pages/editNews';
 import ErrorPage from './pages/error';
 import Home from './pages/home';
 import Main from './pages/main';
@@ -31,8 +32,18 @@ export default function App() {
             },
             {
               path: ':newsId',
-              element: <NewsDetail />,
+              id: 'news-detail',
               loader: newsDetailLoader,
+              children: [
+                {
+                  index: true,
+                  element: <NewsDetail />,
+                },
+                {
+                  path: 'edit',
+                  element: <EditNews />,
+                },
+              ],
             },
             {
               path: 'add',

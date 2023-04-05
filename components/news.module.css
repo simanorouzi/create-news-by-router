@@ -1,5 +1,5 @@
 :root {
-  --orange: orange;
+  --orange: rgb(255, 166, 0);
 }
 .news {
   list-style: none;
@@ -33,17 +33,7 @@
 }
 
 .add-news {
-  background-color: var(--orange);
-  border-radius: 5px;
-  color: white;
-  border: 0;
-  padding: 10px;
   margin-left: 40px;
-}
-.add-news:hover {
-  background-color: #eee;
-  color: var(--orange);
-  cursor: pointer;
 }
 
 .news p.summery {

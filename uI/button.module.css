@@ -1,3 +1,7 @@
+:root {
+  --orange: rgb(255, 166, 0);
+}
+
 .default-button {
   background-color: var(--orange);
   border-radius: 5px;
@@ -9,4 +13,9 @@
   background-color: #eee;
   color: var(--orange);
   cursor: pointer;
+}
+
+.edit-button {
+  margin: 10px;
+  width: 100px;
 }

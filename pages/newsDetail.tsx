@@ -1,16 +1,32 @@
 import * as React from 'react';
-import { useParams, useLoaderData, json } from 'react-router-dom';
+import {
+  useParams,
+  useRouteLoaderData,
+  json,
+  useNavigate,
+} from 'react-router-dom';
 import NewsItem from '../components/newsItem';
 import NewsItemDetail from '../components/newsItemDetail';
 import classes from '../components/news.module.css';
+import buttonStyles from '../uI/button.module.css';
+import Button from '../uI/button';
 
 const NewsDetail = () => {
-  const news = useLoaderData();
+  const news = useRouteLoaderData('news-detail');
+  const navigate = useNavigate();
+  const editClickHandler = () => {
+    navigate('edit');
+  };
   return (
     <React.Fragment>
       <NewsItemDetail newsItem={news} />
-      <button className={classes['add-news']}>Edit</button>
-      <button className={classes['add-news']}>Delete</button>
+      <Button
+        className={buttonStyles['edit-button']}
+        onClick={editClickHandler}
+      >
+        Edit
+      </Button>
+      <Button className={buttonStyles['edit-button']}>Delete</Button>
     </React.Fragment>
   );
 };
