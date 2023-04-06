@@ -2,11 +2,12 @@ import * as React from 'react';
 import { Form } from 'react-router-dom';
 import { newsType } from '../src/types';
 import Button from '../uI/button';
+import classes from './newsForm.module.css';
 
 const NewsForm = ({ news }: { news: newsType }) => {
   const date = news.date ? news.date.toString() : '';
   return (
-    <Form method="post" action="">
+    <Form method="post" className={classes.newsform}>
       <div>
         <label htmlFor="title">title:</label>
         <input type="text" name="title" required defaultValue={news.title} />

@@ -1,0 +1,32 @@
+.newsform {
+  margin-top: 50px;
+}
+.newsform input,
+textarea {
+  border: solid 1px rgb(194, 193, 193);
+  border-radius: 5px;
+  width: 600px;
+  margin-left: 20px;
+}
+
+.newsform input {
+  height: 20px;
+}
+
+.newsform textarea {
+  min-height: 100px;
+}
+
+.newsform input:focus,
+textarea:focus {
+  border-color: orange;
+}
+
+.newsform > div {
+  margin: 10px 0;
+}
+
+.newsform label {
+  width: 100px;
+  display: inline-block;
+}
