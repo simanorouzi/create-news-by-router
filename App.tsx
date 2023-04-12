@@ -6,6 +6,7 @@ import ErrorPage from './pages/error';
 import Home from './pages/home';
 import Main from './pages/main';
 import News, { loader as newsLoader } from './pages/news';
+import { action as sendNewsAction } from './components/newsForm';
 import NewsDetail, {
   loader as newsDetailLoader,
   action as deleteNewsAction,
@@ -46,12 +47,14 @@ export default function App() {
                 {
                   path: 'edit',
                   element: <EditNews />,
+                  action: sendNewsAction,
                 },
               ],
             },
             {
               path: 'add',
               element: <AddNews />,
+              action: sendNewsAction,
             },
           ],
         },

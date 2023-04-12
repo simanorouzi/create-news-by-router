@@ -7,7 +7,7 @@ const EditNews = () => {
   return (
     <React.Fragment>
       <h1>Edit News</h1>
-      <NewsForm news={news} />
+      <NewsForm news={news} method="PATCH" />
     </React.Fragment>
   );
 };
