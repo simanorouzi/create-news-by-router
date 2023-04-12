@@ -1,11 +1,15 @@
 import * as React from 'react';
-import { Form } from 'react-router-dom';
+import { Form, useNavigate } from 'react-router-dom';
 import { newsType } from '../src/types';
 import Button from '../uI/button';
 import classes from './newsForm.module.css';
 
-const NewsForm = ({ news }: { news: newsType }) => {
-  const date = news.date ? news.date.toString() : '';
+const NewsForm = ({ news }) => {
+  // const date = news.date ? news.date.toString() : '';
+  const navigate = useNavigate();
+  const cancelClickHandler = () => {
+    navigate('..');
+  };
   return (
     <Form method="post" className={classes.newsform}>
       <div>
@@ -22,14 +26,14 @@ const NewsForm = ({ news }: { news: newsType }) => {
       </div>
       <div>
         <label htmlFor="date">date:</label>
-        <input type="date" name="date" required defaultValue={date} />
+        {/* <input type="date" name="date" required defaultValue={date} /> */}
       </div>
       <div>
         <label htmlFor="image">image url:</label>
         <input type="text" name="image" defaultValue={news.image} />
       </div>
       <Button type="submit">Save</Button>
-      <Button>Cancel</Button>
+      <Button onClick={cancelClickHandler}>Cancel</Button>
     </Form>
   );
 };
