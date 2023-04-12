@@ -20,3 +20,7 @@ export type ButtonType = {
   className?: string;
   type?: 'submit' | 'reset';
 };
+
+export type NewsFilterType = {
+  onFilter: (keyword) => void;
+};

@@ -3,10 +3,13 @@ import NewsList from '../components/newsList';
 import { json, useLoaderData } from 'react-router-dom';
 import classes from '../components/news.module.css';
 import Button from '../uI/button';
+import NewsFilter from '../components/newsFilter';
 
 const News = () => {
-  const news = useLoaderData();
+  const [keyword, setKeyword] = React.useState('');
+  const [list, setList] = React.useState([]);
 
+  const news = useLoaderData();
   const data = Object.entries(news).map(([key, value]) => {
     return {
       id: key,
@@ -17,10 +20,19 @@ const News = () => {
     };
   });
 
+  console.log(news);
+  React.useEffect(() => {
+    setList(data.filter((item) => item.title.includes(keyword)));
+  }, [keyword]);
+
+  const filterHandler = (key) => {
+    setKeyword(key);
+  };
   return (
     <div className={classes.card}>
+      <NewsFilter onFilter={filterHandler} />
       <Button className={classes['add-news']}>Add News</Button>
-      <NewsList list={data} />
+      <NewsList list={list} />
     </div>
   );
 };
