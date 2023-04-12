@@ -11,8 +11,11 @@ import Button from '../uI/button';
 import classes from './newsForm.module.css';
 
 const NewsForm = ({ news, method }: { news: newsType; method: string }) => {
-  const date = news.date ? news.date.toString() : '';
-  const data = useActionData();
+  let date = '';
+  if (news && news.date) {
+    date = news.date ? news.date.toString() : '';
+  }
+  // const data = useActionData();
 
   const navigate = useNavigate();
   const cancelClickHandler = () => {
@@ -72,7 +75,6 @@ export const action = async ({ request, params }) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(news),
   };
-  console.log(data);
 
   let url =
     'https://foodorder-35902-default-rtdb.europe-west1.firebasedatabase.app/Events.json';
@@ -83,9 +85,9 @@ export const action = async ({ request, params }) => {
   const response = await fetch(url, newsRequest);
 
   if (!response.ok) {
-    throw json();
+    throw json({ message: 'sending data went wrong!!' }, { status: 500 });
   }
-  redirect('/news');
+  return redirect('/news');
 };
 
 export default NewsForm;
