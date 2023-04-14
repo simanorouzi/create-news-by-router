@@ -54,6 +54,8 @@ export const loader = async ({ params }) => {
 };
 
 export const action = async ({ params, request }) => {
+  console.log(params);
+
   const response = await fetch(
     `https://foodorder-35902-default-rtdb.europe-west1.firebasedatabase.app/Events/${params.newsId}.json`,
     { method: request.method }
